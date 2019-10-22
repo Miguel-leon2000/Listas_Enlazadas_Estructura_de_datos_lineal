@@ -6,6 +6,16 @@ class node:
 
 # Creamos la clase linked_list
 class linked_list:
+
+    __sumatoria = 0
+    __multiplicacion = 1
+
+    def getSumatoria(self):
+        return self.__sumatoria
+
+    def getMultiplicacion(self):
+        return self.__multiplicacion
+
     def __init__(self):
         self.head = None
 
@@ -51,13 +61,48 @@ class linked_list:
     def print_list(self):
         node = self.head
         while node != None:
-            print(node.data)
+            print(node.data, node.next)
             node = node.next
 
+    def obtenerSumatoria(self):
+        node = self.head
+
+        while node != None:
+            self.__sumatoria += node.data
+            node = node.next
+
+        return self.__sumatoria
+
+    def obtenerMultiplicacion(self):
+        node = self.head
+
+        while node != None:
+            self.__multiplicacion *= node.data
+            node = node.next
+
+        return self.__multiplicacion
 
 s = linked_list()  # Instancia de la clase
 s.add_at_front(5)  # Agregamos un elemento al frente del nodo
 s.add_at_end(8)  # Agregamos un elemento al final del nodo
 s.add_at_front(9)  # Agregamos otro elemento al frente del nodo
+s.add_at_end(4)
+s.add_at_end(12)
 
+x = linked_list()
+x.add_at_front(14)  # Agregamos un elemento al frente del nodo
+x.add_at_end(11)  # Agregamos un elemento al final del nodo
+x.add_at_front(7)  # Agregamos otro elemento al frente del nodo
+x.add_at_end(3)
+x.add_at_end(8)
+
+print("Vector 1:")
 s.print_list()  # Imprimimos la lista de nodos
+print("----------------------------------------------------------")
+print("Vector 2:")
+x.print_list()
+
+print()
+print("**********************************************************")
+print("La suma de los vectores es: ", int(s.obtenerSumatoria() + x.obtenerSumatoria()))
+print("El producto escalar es: ", int(s.obtenerMultiplicacion() + x.obtenerMultiplicacion()))
