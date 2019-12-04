@@ -14,6 +14,3 @@ De acuerdo a este problema comprendi la forma para crear dos vectores con el uso
 en el cual se realizaron operaciones como es la suma y producto escalar (multilpicación) de acuerdo a los valores 
 asignados, para posteriormente mostrar los resultados.   
 #
-**-Palabras clave:**
- 
-class, def, None, return, if, else, elif, while, is, not, and, return, for, in
